@@ -1,14 +1,17 @@
 package org.example;
 
 
-import java.util.ArrayList;
-import java.util.List;
-//import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 import org.example.GestionInformacion.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    public static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         //Contar genes en un ADN
@@ -52,6 +55,43 @@ public class Main {
         boolean encontradoBinario = busquedaBinaria.busquedaBinaria("Mandarina");
         System.out.println("La palabra fue encontrada con el metodo Binaro: " + encontradoBinario);
 
+        //Gestion de Fechas
+        List<Date> fechas = new ArrayList<>();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        while (true) {
+            System.out.println("\n1. Ingresar fecha");
+            System.out.println("2. Listar fechas");
+            System.out.println("3. Salir");
+            System.out.print("Seleccione una opción: ");
+            String opcion = sc.nextLine();
+
+            switch (opcion) {
+                case "1":
+                    System.out.print("Ingrese una fecha en formato dd/MM/yyyy: ");
+                    String fechaStr = sc.nextLine();
+                    try {
+                        Date fecha = dateFormat.parse(fechaStr);
+                        fechas.add(fecha);
+                        Collections.sort(fechas);
+                    } catch (Exception e) {
+                        System.out.println("Formato de fecha incorrecto. Por favor, ingrese la fecha en formato dd/MM/yyyy.");
+                    }
+                    break;
+                case "2":
+                    System.out.println("\nFechas ingresadas:");
+                    for (Date fecha : fechas) {
+                        System.out.println(dateFormat.format(fecha));
+                    }
+                    break;
+                case "3":
+                    System.out.println("Ha salido de Gestion de Fechas.");
+                    System.exit(0);
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+            }
+
+        }
     }
 
     public static int contarGenes (String ADN) {
