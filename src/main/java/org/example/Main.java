@@ -47,7 +47,7 @@ public class Main {
         boolean encontrado = busquedaLineal.busquedaLineal("Gormiti");
         System.out.println("La palabra fue encontrada: " + encontrado);
 
-        
+
 
     }
 

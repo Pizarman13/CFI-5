@@ -14,8 +14,8 @@ public class BusquedaLineal {
     public BusquedaLineal(String ruta) {
 
         try {
-            String contenido = new String(Files.readAllBytes(Paths.get(ruta)));
-            palabras = Arrays.asList(contenido.split("\\s+"));
+            String texto = new String(Files.readAllBytes(Paths.get(ruta)));
+            palabras = Arrays.asList(texto.split("\\s+"));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
