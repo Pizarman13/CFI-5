@@ -29,7 +29,13 @@ public class Main {
         int fin = 5;
         listadoNumeros(inicio, fin);
 
-        //
+        //Calculo de Potencias y Maximos
+        System.out.println("La potencia de 2 elevado a 3 es: " + potencia(2, 3));
+
+        int[] numeros = {7, 2, 9, 4, 5};
+        int maximo = calcularMaximo(numeros, numeros.length);
+        System.out.println("El número máximo en el arreglo es: " + maximo);
+
 
     }
 
@@ -86,6 +92,23 @@ public class Main {
             listadoNumeros(inicio + 1, fin);
         }
 
+    }
+
+    public static double potencia(double base, int exponente) {
+        double res = 1;
+        for (int i = 0; i < exponente; i++) {
+            res *= base;
+        }
+        return res;
+    }
+
+    public static int calcularMaximo(int[] numeros, int longitiud) {
+        if (longitiud == 1) {
+            return numeros[0];
+        } else {
+            int max = calcularMaximo(numeros, longitiud - 1);
+            return numeros[longitiud - 1] > max ? numeros[longitiud - 1] : max;
+        }
     }
 
 }
