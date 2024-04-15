@@ -20,6 +20,17 @@ public class Main {
         int n = 3;
         combinacionesGen(bases, n);
 
+        //Sumatoria Y Listado de Números
+        int num = 5;
+        int sum = suma(num);
+        System.out.println("La suma de los números de 1 a " + num + " es: " + sum);
+
+        int inicio = 1;
+        int fin = 5;
+        listadoNumeros(inicio, fin);
+
+        //
+
     }
 
     public static int contarGenes (String ADN) {
@@ -57,6 +68,24 @@ public class Main {
             calcularCombinaciones(bases, longitud, combinacion);
             combinacion.remove(combinacion.size() - 1);
         }
+    }
+
+    public static int suma(int n) {
+        if (n == 0) {
+            return 0;
+        } else {
+            return n + suma(n - 1);
+        }
+    }
+
+    public static void listadoNumeros(int inicio, int fin) {
+        if (inicio == fin) {
+            System.out.println(inicio);
+        } else {
+            System.out.print(inicio + " ");
+            listadoNumeros(inicio + 1, fin);
+        }
+
     }
 
 }
