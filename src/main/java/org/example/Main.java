@@ -3,7 +3,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+//import java.util.Scanner;
 import org.example.GestionInformacion.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -41,6 +41,14 @@ public class Main {
         //Organizacion de Documentos
         OrganizacionDocumentos organizacionDocumentos = new OrganizacionDocumentos();
         organizacionDocumentos.ordenarDocumentos("Texto.txt");
+
+        //Busqueda Lineal
+        BusquedaLineal busquedaLineal = new BusquedaLineal("Texto.txt");
+        boolean encontrado = busquedaLineal.busquedaLineal("Gormiti");
+        System.out.println("La palabra fue encontrada: " + encontrado);
+
+        
+
     }
 
     public static int contarGenes (String ADN) {

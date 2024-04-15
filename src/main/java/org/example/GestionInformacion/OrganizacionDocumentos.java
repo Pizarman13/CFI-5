@@ -30,7 +30,7 @@ public class OrganizacionDocumentos {
                 System.out.println(documento);
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
