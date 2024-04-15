@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BusquedaLineal {
 
-    public List<String> palabras;
+    private List<String> palabras;
 
     public BusquedaLineal(String ruta) {
 

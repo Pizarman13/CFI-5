@@ -45,9 +45,12 @@ public class Main {
         //Busqueda Lineal
         BusquedaLineal busquedaLineal = new BusquedaLineal("Texto.txt");
         boolean encontrado = busquedaLineal.busquedaLineal("Gormiti");
-        System.out.println("La palabra fue encontrada: " + encontrado);
+        System.out.println("La palabra fue encontrada con el metodo Lineal: " + encontrado);
 
-
+        //Busqueda Binaria
+        BusquedaBinaria busquedaBinaria = new BusquedaBinaria("Texto.txt");
+        boolean encontradoBinario = busquedaBinaria.busquedaBinaria("Mandarina");
+        System.out.println("La palabra fue encontrada con el metodo Binaro: " + encontradoBinario);
 
     }
 
