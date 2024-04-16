@@ -16,9 +16,8 @@ public class Main {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         List<Date> fechas = new ArrayList<>();
-
-
-        //Menu del menu
+        
+        //Menu
         while (true) {
             System.out.println("\n1. Contar genes en un ADN");
             System.out.println("2. Combinaciones Geneticas");
