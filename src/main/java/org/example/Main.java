@@ -55,6 +55,20 @@ public class Main {
         boolean encontradoBinario = busquedaBinaria.busquedaBinaria("Mandarina");
         System.out.println("La palabra fue encontrada con el metodo Binaro: " + encontradoBinario);
 
+        //QuickSort
+        int[] array = {10, 5, 2, 3, 9, 1, 8, 7, 6, 4};
+        System.out.println("Array original:");
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+        
+        quickSort(array, 0, array.length - 1);
+
+        System.out.println("Array ordenado por QuickSort:");
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+
         //Gestion de Fechas
         List<Date> fechas = new ArrayList<>();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -90,8 +104,8 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
             }
-
         }
+
     }
 
     public static int contarGenes (String ADN) {
@@ -164,6 +178,36 @@ public class Main {
             int max = calcularMaximo(numeros, longitiud - 1);
             return numeros[longitiud - 1] > max ? numeros[longitiud - 1] : max;
         }
+    }
+
+    public static void quickSort(int[] array, int inicio, int fin) {
+        if (inicio < fin) {
+            int pivotIndex = partition(array, inicio, fin);
+
+            quickSort(array, inicio, pivotIndex - 1);
+            quickSort(array, pivotIndex + 1, fin);
+        }
+    }
+
+    private static int partition(int[] array, int inicio, int fin) {
+        int pivot = array[fin];
+        int i = (inicio - 1);
+
+        for (int j = inicio; j < fin; j++) {
+            if (array[j] <= pivot) {
+                i++;
+
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        int temp = array[i + 1];
+        array[i + 1] = array[fin];
+        array[fin] = temp;
+
+        return i + 1;
     }
 
 }
